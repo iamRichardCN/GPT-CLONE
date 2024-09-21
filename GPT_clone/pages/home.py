@@ -11,7 +11,6 @@ from GPT_clone import ui
 def home_page() -> rx.Component:
     # Welcome Page (Index)
     return ui.base_layout(
-        rx.color_mode.button(position="top-right"),
         rx.vstack(
             rx.heading("Welcome to GPT Clone!", size="9"),
             rx.text(

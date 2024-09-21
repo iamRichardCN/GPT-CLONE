@@ -8,7 +8,6 @@ from GPT_clone import ui
 def about_us_page() -> rx.Component:
     # About Us Page 
     return ui.base_layout(
-        rx.color_mode.button(position="top-right"),
         rx.vstack(
             rx.heading("Learn about GPT Clone!", size="9"),            
             spacing="5",
