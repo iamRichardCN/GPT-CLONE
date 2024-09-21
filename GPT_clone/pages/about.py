@@ -4,14 +4,8 @@ import reflex as rx
 
 from GPT_clone import ui
 
-class State(rx.State):
-    """The app state."""
 
-    ...
-
-
-
-def about_us() -> rx.Component:
+def about_us_page() -> rx.Component:
     # About Us Page 
     return ui.base_layout(
         rx.color_mode.button(position="top-right"),
