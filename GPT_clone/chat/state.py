@@ -1,3 +1,5 @@
+#import time
+import asyncio
 import reflex as rx
 
 
@@ -9,8 +11,12 @@ class ChatState(rx.State):
     def user_did_submit(self) -> bool: 
         return self.did_submit
     
-    def handle_submit(self, form_data:dict):
+    async def handle_submit(self, form_data:dict):
         # Handle form submission
         print("HERE IS OUR FORM DATA:", form_data)
         self.did_submit = True
+        yield
+        await asyncio.sleep(2)
+        self.did_submit = False
+        yield
     
