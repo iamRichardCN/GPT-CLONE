@@ -22,11 +22,10 @@ class ChatState(rx.State):
         return self.did_submit
     
     def append_message(self, message, is_bot:bool=False):
-       #not sure if this should be called message or messages
         self.messages.append(
             ChatMessage(
                 message=message,
-                 is_bot=False
+                 is_bot=is_bot
             )
         )             
         
