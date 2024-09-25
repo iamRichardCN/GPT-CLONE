@@ -2,7 +2,7 @@
 from typing import List
 import reflex as rx
 
-from . import ai
+from . import ai2
 
 
 class ChatMessage(rx.Base):
@@ -29,7 +29,7 @@ class ChatState(rx.State):
             )
         )        
     
-    
+#actual working chatgpt model
     def get_gpt_message(self):
         gpt_messages = [
             {
@@ -47,7 +47,6 @@ class ChatState(rx.State):
             })   
         return gpt_messages
     
-
     async def handle_submit(self, form_data:dict):
         # Handle form submission
         print("HERE IS OUR FORM DATA:", form_data)
@@ -57,10 +56,8 @@ class ChatState(rx.State):
             self.append_message(user_message, is_bot=False)
             yield
             gpt_messages=self.get_gpt_message()
-            print(gpt_messages)
-            bot_response=ai.get_llm_response(gpt_messages)
+            bot_response=ai2.get_llm_response(gpt_messages)
             #await asyncio.sleep(2)
             self.did_submit = False
             self.append_message(bot_response, is_bot=True)
             yield
-    

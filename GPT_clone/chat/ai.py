@@ -15,3 +15,4 @@ def get_llm_response(gpt_messages):
         messages=gpt_messages
     )
     return completion.choices[0].message.content
+

@@ -1,4 +1,7 @@
 #reflex==0.5.10
 #python-decouple 
 #openai
-transformers torch
+#transformers
+#torch
+#requests
+huggingface_hub
