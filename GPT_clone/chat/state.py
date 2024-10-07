@@ -1,7 +1,7 @@
 #import time
 from typing import List
 import reflex as rx
-from GPT_clone.models import chat
+from GPT_clone.models import chat as ChatModel
 from . import ai2
 
 
@@ -25,7 +25,7 @@ class ChatState(rx.State):
     def on_load(self):
         with rx.session as session:
            results = session.exec(
-                chat.select()
+                ChatModel.select()
             ).all()
            print(results)
            
@@ -33,6 +33,13 @@ class ChatState(rx.State):
         
     
     def append_message(self, message, is_bot:bool=False):
+        if not is_bot:
+            with rx.session() as session:
+                obj = ChatModel(
+                    title =message,
+                    )
+                session.add(obj)
+                session.commit()
         self.messages.append(
             ChatMessage(
                 message=message,
