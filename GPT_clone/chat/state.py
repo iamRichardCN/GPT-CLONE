@@ -34,7 +34,7 @@ class ChatState(rx.State):
         gpt_messages = [
             {
                "role": "system",
-               "content" : "you are an expert in creating recipes like an elite chef. Respond in markdown"
+               "content" : "Respond in markdown and make sure you are brief but please dont add any answer to what was never asked, be concise to maximise you 200 tokens"
             }
         ]
         for chat_message in self.messages:
@@ -49,7 +49,7 @@ class ChatState(rx.State):
     
     async def handle_submit(self, form_data:dict):
         # Handle form submission
-        print("HERE IS OUR FORM DATA:", form_data)
+        #print("HERE IS OUR FORM DATA:", form_data)
         user_message=form_data.get('message')
         if  user_message:
             self.did_submit = True
