@@ -2,7 +2,7 @@ import reflex as rx
 from decouple import config
 
 
-DATABASE_URL = config("DATABASE_URL", cast=str, default=None)
+DATABASE_URL = config("DATABASE_URL", default=None)
 
 
 config = rx.Config(

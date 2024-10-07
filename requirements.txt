@@ -1,8 +1,8 @@
 #reflex==0.5.10
 python-decouple 
-#openai
-#transformers
-#torch
-#requests
-#huggingface_hub
-#psycopg2-binary
+openai
+transformers
+torch
+requests
+huggingface_hub
+psycopg2-binary

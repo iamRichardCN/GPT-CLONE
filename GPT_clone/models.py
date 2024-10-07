@@ -12,7 +12,7 @@ class chat(rx.Model, table=True):
     #messages
     title: str
     created_at: datetime=Field(
-        defualt_factory=get_utc_now,
+        default_factory=get_utc_now,
         sa_type=sqlalchemy.DateTime(timezone=True),
         sa_column_kwargs={
             'server_default': sqlalchemy.func.now()
@@ -20,7 +20,7 @@ class chat(rx.Model, table=True):
         nullable=False,
     )
     updated_at: datetime=Field(
-        defualt_factory=get_utc_now,
+        default_factory=get_utc_now,
         sa_type=sqlalchemy.DateTime(timezone=True),
         sa_column_kwargs={
             'onupdate': sqlalchemy.func.now(), 
